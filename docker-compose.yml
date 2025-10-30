@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: painel_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: senha_segura
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data"
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: next_app
+    environment:
+      # Ajuste se for usar isso no frontend
+      DATABASE_URL: "postgresql://admin:senha_segura@postgres:5432/painel_db"
+      NODE_ENV: "production"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    # Para produção, geralmente NÃO montamos o código.
+    # Se quiser modo dev (hot reload), troque por:
+    # volumes:
+    #   - ./app:/app
+    #   - /app/node_modules
+
+volumes:
+  postgres_data:

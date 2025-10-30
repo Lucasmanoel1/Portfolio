@@ -1,0 +1,32 @@
+# Etapa 1: instalar dependências (reprodutível)
+FROM node:20-alpine AS deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Etapa 2: build
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+# copia todo o código (exceto o que .dockerignore ignora)
+COPY . .
+# se você usa Next 14/15, isso vai gerar .next
+RUN npm run build
+
+# Etapa 3: runtime
+FROM node:20-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Copia artefatos necessários para rodar "next start"
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./
+COPY --from=deps    /app/node_modules ./node_modules
+
+# Porta padrão do Next
+EXPOSE 3000
+
+# "start" deve existir no package.json (ex: next start -p 3000)
+CMD ["npm", "run", "start"]
