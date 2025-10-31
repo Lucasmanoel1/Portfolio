@@ -28,11 +28,10 @@ const SobrePage = () => {
       { line: '  nome: <span class="string">"Lucas Manoel"</span>,', delay: 2 },
       { line: '  idade: <span class="number">20</span>,', delay: 2 },
       { line: '  curso: <span class="string">"Eng. Software"</span>,', delay: 2 },
-      { line: '  foco: <span class="string">"Backend ❤"</span>,', delay: 2 },
+      { line: '  foco: <span class="string">"Backend "</span>,', delay: 2 },
       { line: '  objetivo: <span class="string">"Primeiro Estágio"</span>', delay: 2 },
       { line: '};', delay: 2 },
       { line: '', delay: 2 },
-      { line: '<span class="comment">// Sempre aprendendo 🚀</span>', delay: 2 }
     ];
     const typingElement = document.getElementById('typing-effect');
     if (typingElement) {
@@ -151,13 +150,12 @@ const SobrePage = () => {
         <section id="home" className="hero min-h-screen flex items-center bg-gradient-to-br from-[#FAF7F0] to-[#FEFEFE] dark:from-[#2C241E] dark:to-[#1c1814] relative overflow-hidden pt-32 pb-16">
           <div className={`${central} grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-8 items-center`}>
             <div className="hero-text order-1 md:order-1 space-y-5 text-center md:text-left">
-              <h1 className="text-5xl md:text-6xl font-extrabold text-[#2C1810] dark:text-[#FAF7F0] leading-tight">Desenvolvedor Backend</h1>
-              <p className="text-xl text-[#6B4423] dark:text-[#A89F91]">Estudante de Engenharia de Software</p>
-              <p className="text-lg text-[#6B4423] dark:text-[#A89F91] max-w-xl mx-auto md:mx-0">Construindo soluções robustas e escaláveis com foco em arquitetura de sistemas. Apaixonado por criar código eficiente que resolve problemas reais.</p>
+              <h1 className="text-5xl md:text-6xl font-extrabold text-[#2C1810] dark:text-[#FAF7F0] leading-tight">Software Engineer</h1>
+              <p className="text-lg text-[#6B4423] dark:text-[#A89F91] max-w-xl mx-auto md:mx-0">Estudante de Engenharia de Software (5º período) com três anos de experiência em desenvolvimento back-end e modelagem de bancos de dados relacionais, aplicando fundamentos de arquitetura de software e sistemas escaláveis. Busco meu primeiro estágio para aplicar boas práticas de arquitetura, versionamento de código e integração contínua.</p>
               <div className="flex justify-center md:justify-start gap-4 pt-4">
-                <a href="https://github.com/Luccas-Manoel" target="_blank" className="social-link"><i className="fab fa-github"></i></a>
-                <a href="https://br.linkedin.com/" target="_blank" className="social-link"><i className="fab fa-linkedin"></i></a>
-                <a href="https://x.com/Devlucaszz" target="_blank" className="social-link"><i className="fab fa-x-twitter"></i></a>
+                <a href="https://github.com/Lucasmanoel1" target="_blank" className="social-link"><i className="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/lucas-manoel-developer/" target="_blank" className="social-link"><i className="fab fa-linkedin"></i></a>
+                <a href="https://x.com/LucasMa30817760" target="_blank" className="social-link"><i className="fab fa-x-twitter"></i></a>
                 <a href="https://www.instagram.com/zzlucca_/" target="_blank" className="social-link"><i className="fab fa-instagram"></i></a>
               </div>
             </div>
@@ -181,7 +179,7 @@ const SobrePage = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="stack-card scroll-animate opacity-0 translate-y-5" style={{ transitionDelay: '0ms' }}><h3 className="category-title"><i className="fas fa-server"></i> Backend</h3><div className="flex flex-wrap gap-3"><span className="tech-tag">Node.js</span><span className="tech-tag">Java</span><span className="tech-tag">PHP</span><span className="tech-tag">SQL</span><span className="tech-tag">PostgreSQL</span><span className="tech-tag">Prisma</span></div></div>
               <div className="stack-card scroll-animate opacity-0 translate-y-5" style={{ transitionDelay: '150ms' }}><h3 className="category-title"><i className="fas fa-code"></i> Frontend</h3><div className="flex flex-wrap gap-3"><span className="tech-tag">HTML</span><span className="tech-tag">CSS</span><span className="tech-tag">JavaScript</span><span className="tech-tag">React</span><span className="tech-tag">Next.js</span><span className="tech-tag">Tailwind CSS</span></div></div>
-              <div className="stack-card scroll-animate opacity-0 translate-y-5" style={{ transitionDelay: '300ms' }}><h3 className="category-title"><i className="fas fa-tools"></i> DevOps & Ferramentas</h3><div className="flex flex-wrap gap-3"><span className="tech-tag">AWS</span><span className="tech-tag">Git</span><span className="tech-tag">BetterAuth</span></div></div>
+              <div className="stack-card scroll-animate opacity-0 translate-y-5" style={{ transitionDelay: '300ms' }}><h3 className="category-title"><i className="fas fa-tools"></i> DevOps & Ferramentas</h3><div className="flex flex-wrap gap-3"><span className="tech-tag">Docker</span><span className="tech-tag">Git</span><span className="tech-tag">BetterAuth</span></div></div>
             </div>
           </div>
         </section>
@@ -195,7 +193,7 @@ const SobrePage = () => {
             </div>
             <div className="project-card scroll-animate opacity-0 translate-y-5" style={{ transitionDelay: '150ms' }}>
               <h3 className="text-3xl font-bold mb-2 text-[#2C1810] dark:text-[#FAF7F0]">Personal Workspace</h3>
-              <p className="text-lg text-[#6B4423] dark:text-[#A89F91] mb-6">Um workspace completo e personalizado que centraliza ferramentas essenciais do dia a dia, funcionando como um painel de controle pessoal com armazenamento em nuvem, entretenimento e mais, tudo em uma plataforma segura.</p>
+              <p className="text-lg text-[#6B4423] dark:text-[#A89F91] mb-6">Um workspace completo e personalizado que centraliza ferramentas essenciais do dia a dia, funcionando como um painel de controle pessoal com armazenamento em nuvem, entretenimento e mais.</p>
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 mb-8">
                 <div className="feature-item"><i className="fas fa-cloud"></i><span>Drive pessoal (Cloud Storage)</span></div>
                 <div className="feature-item"><i className="fas fa-sticky-note"></i><span>Sistema de notas (Notion privado)</span></div>
@@ -206,11 +204,11 @@ const SobrePage = () => {
               </div>
               <h4 className="text-xl font-semibold mb-4 text-[#2C1810] dark:text-[#FAF7F0]">Stack Utilizada:</h4>
               <div className="flex flex-wrap gap-3 mb-8">
-                <span className="tech-item">Next.js</span><span className="tech-item">Node.js</span><span className="tech-item">PostgreSQL</span><span className="tech-item">Prisma</span><span className="tech-item">BetterAuth</span><span className="tech-item">AWS</span>
+                <span className="tech-item">Next.js</span><span className="tech-item">Node.js</span><span className="tech-item">PostgreSQL</span><span className="tech-item">Prisma</span><span className="tech-item">BetterAuth</span><span className="tech-item">Docker</span>
               </div>
               <div className="flex gap-4 flex-wrap">
                 <a href="/sign-in" className="project-link-primary"><i className="fas fa-external-link-alt"></i> Ver Projeto</a>
-                <a href="https://github.com/Luccas-Manoel/Lucas-Manoel" target="_blank" className="project-link-secondary"><i className="fab fa-github"></i> Código no GitHub</a>
+                <a href="https://github.com/Lucasmanoel1/Portfolio" target="_blank" className="project-link-secondary"><i className="fab fa-github"></i> Código no GitHub</a>
               </div>
             </div>
           </div>
@@ -237,9 +235,9 @@ const SobrePage = () => {
       <footer className="bg-[#2C1810] dark:bg-[#110E0B] text-[#A89F91] py-12">
         <div className={`${central} h-full flex flex-col justify-between text-center`}>
           <div className="flex justify-center gap-6 mb-8">
-            <a href="https://github.com/Luccas-Manoel" target="_blank" className="footer-social-link"><i className="fab fa-github"></i></a>
-            <a href="https://br.linkedin.com/" target="_blank" className="footer-social-link"><i className="fab fa-linkedin"></i></a>
-            <a href="https://x.com/Devlucaszz" target="_blank" className="footer-social-link"><i className="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/Lucasmanoel1" target="_blank" className="footer-social-link"><i className="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/lucas-manoel-developer/" target="_blank" className="footer-social-link"><i className="fab fa-linkedin"></i></a>
+            <a href="https://x.com/LucasMa30817760" target="_blank" className="footer-social-link"><i className="fab fa-x-twitter"></i></a>
             <a href="https://www.instagram.com/zzlucca_/" target="_blank" className="footer-social-link"><i className="fab fa-instagram"></i></a>
           </div>
           <p className="mt-auto">&copy; 2025 Lucas Manoel. Todos os direitos reservados.</p>
