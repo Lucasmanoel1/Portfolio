@@ -1,4 +1,4 @@
-# Etapa 1: instalar dependências (reprodutível)
+# Etapa 1: deps
 FROM node:20-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -8,9 +8,13 @@ RUN npm ci
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-# copia todo o código (exceto o que .dockerignore ignora)
 COPY . .
-# se você usa Next 14/15, isso vai gerar .next
+
+# Gere o Prisma Client (sem depender do .env)
+RUN DATABASE_URL="postgresql://fake:fake@localhost:5432/fake" \
+    npx prisma generate --schema=prisma/schema.prisma
+
+# Next build
 RUN npm run build
 
 # Etapa 3: runtime
@@ -19,14 +23,11 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copia artefatos necessários para rodar "next start"
+# copie do builder (importantíssimo, tem o client gerado!)
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./
-COPY --from=deps    /app/node_modules ./node_modules
 
-# Porta padrão do Next
 EXPOSE 3000
-
-# "start" deve existir no package.json (ex: next start -p 3000)
-CMD ["npm", "run", "start"]
+CMD ["npm","run","start"]
